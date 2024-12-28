@@ -15,17 +15,20 @@ import Foundation
 
 let allFiles = [
     "test",
+    "test copy",
     "test copy 3",
-    "name",
-    "othername"
+    "test copy 99"
 ]
 
 let originalFilenames = [
     "test",
+    "test 99",
     "test copy",
     "test copy 1",
     "test copy 2",
-    "test copy 3"
+    "test copy 3",
+    "test copy 98",
+    "test copy 99"
 ]
 
 let fileNameDuplication = FileNameDuplication(existingFiles: allFiles)
@@ -37,11 +40,14 @@ for originalFilename in originalFilenames {
 
 Example Output
 ```
-Original: test -> New: test copy
-Original: test copy -> New: test copy 1
+Original: test -> New: test copy 2
+Original: test 99 -> New: test 99 copy
+Original: test copy -> New: test copy 2
 Original: test copy 1 -> New: test copy 2
-Original: test copy 2 -> New: test copy 3
+Original: test copy 2 -> New: test copy 4
 Original: test copy 3 -> New: test copy 4
+Original: test copy 98 -> New: test copy 100
+Original: test copy 99 -> New: test copy 100
 ```
 ## License
 
