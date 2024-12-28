@@ -1,2 +1,52 @@
 # FileNameDuplication
-FileNameDuplication is a Swift utility that implements the same algorithm used by Apple to handle filename duplicates.
+
+**FileNameDuplication** is a Swift utility that implements the same algorithm used by Apple to automatically handle filename duplicates. It generates unique filenames by adding a "copy" suffix (e.g., `test` becomes `test copy`, `test copy 1` becomes `test copy 2`), helping to prevent filename clashes when saving files.
+
+## Features
+
+- **Automatically generates unique filenames**: Adds "copy" or increments the copy number to prevent duplicates (e.g., `test copy 1`, `test copy 2`).
+- **Follows Apple's filename duplication algorithm**: The same approach used by macOS to handle duplicate filenames in a directory.
+- **Simple to use**: A straightforward utility for managing file names without manual intervention.
+
+## Usage
+
+```swift
+import Foundation
+
+let allFiles = [
+    "test",
+    "test copy 3",
+    "name",
+    "othername"
+]
+
+let originalFilenames = [
+    "test",
+    "test copy",
+    "test copy 1",
+    "test copy 2",
+    "test copy 3"
+]
+
+let fileNameDuplication = FileNameDuplication(existingFiles: allFiles)
+for originalFilename in originalFilenames {
+    let newFilename = fileNameDuplication.generateUniqueFilename(originalName: originalFilename)
+    print("Original: \(originalFilename) -> New: \(newFilename)")
+}
+```
+
+Example Output
+```
+Original: test -> New: test copy
+Original: test copy -> New: test copy 1
+Original: test copy 1 -> New: test copy 2
+Original: test copy 2 -> New: test copy 3
+Original: test copy 3 -> New: test copy 4
+```
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributing
+
+Feel free to fork the repository, open issues, or submit pull requests. Contributions are always welcome!
