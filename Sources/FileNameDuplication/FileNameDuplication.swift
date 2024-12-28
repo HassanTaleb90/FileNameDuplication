@@ -34,9 +34,9 @@ public class FileNameDuplication {
         var newFilename: String
         
         if count == 0 {
-            newFilename = "\(base) copy"  // "test" -> "test copy"
+            newFilename = "\(base) copy"
         } else {
-            newFilename = "\(base) copy \(count + 1)"  // "test copy" -> "test copy 2"
+            newFilename = "\(base) copy \(count + 1)"
         }
         
         while existingFiles.contains(newFilename) {
