@@ -13,7 +13,7 @@
 ```swift
 import Foundation
 
-let allFiles = [
+let allExistingFiles = [
     "test",
     "test copy",
     "test copy 3",
@@ -31,7 +31,7 @@ let originalFilenames = [
     "test copy 99"
 ]
 
-let fileNameDuplication = FileNameDuplication(existingFiles: allFiles)
+let fileNameDuplication = FileNameDuplication(existingFiles: allExistingFiles)
 for originalFilename in originalFilenames {
     let newFilename = fileNameDuplication.generateUniqueFilename(originalName: originalFilename)
     print("Original: \(originalFilename) -> New: \(newFilename)")
