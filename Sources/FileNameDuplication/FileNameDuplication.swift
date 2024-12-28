@@ -5,7 +5,7 @@
 //
 import Foundation
 
-class FileNameDuplication {
+public class FileNameDuplication {
     
     var existingFiles: [String]
     
