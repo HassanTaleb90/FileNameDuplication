@@ -12,7 +12,6 @@
 ## Usage
 
 ```swift
-import Foundation
 import FileNameDuplication
 
 let allExistingFiles = [
