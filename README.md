@@ -13,6 +13,7 @@
 
 ```swift
 import Foundation
+import FileNameDuplication
 
 let allExistingFiles = [
     "test",
