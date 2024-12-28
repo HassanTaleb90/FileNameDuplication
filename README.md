@@ -12,18 +12,8 @@
 ## Usage
 
 ```swift
-import FileNameDuplication
-
-let allExistingFiles = [
-    "test",
-    "test copy",
-    "test copy 3",
-    "test copy 99"
-]
-
 let originalFilenames = [
     "test",
-    "test 99",
     "test copy",
     "test copy 1",
     "test copy 2",
@@ -32,23 +22,31 @@ let originalFilenames = [
     "test copy 99"
 ]
 
+var allExistingFiles = [
+    "test",
+    "test copy",
+    "test copy 3",
+    "test copy 99"
+]
+
 let fileNameDuplication = FileNameDuplication(existingFiles: allExistingFiles)
 for originalFilename in originalFilenames {
     let newFilename = fileNameDuplication.generateUniqueFilename(originalName: originalFilename)
     print("Original: \(originalFilename) -> New: \(newFilename)")
+    allExistingFiles.append(newFilename)
+    fileNameDuplication.existingFiles = allExistingFiles
 }
 ```
 
 ## Example Output
 ```
 Original: test -> New: test copy 2
-Original: test 99 -> New: test 99 copy
-Original: test copy -> New: test copy 2
-Original: test copy 1 -> New: test copy 2
-Original: test copy 2 -> New: test copy 4
-Original: test copy 3 -> New: test copy 4
+Original: test copy -> New: test copy 4
+Original: test copy 1 -> New: test copy 5
+Original: test copy 2 -> New: test copy 6
+Original: test copy 3 -> New: test copy 7
 Original: test copy 98 -> New: test copy 100
-Original: test copy 99 -> New: test copy 100
+Original: test copy 99 -> New: test copy 101
 ```
 ## License
 
