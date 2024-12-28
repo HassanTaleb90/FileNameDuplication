@@ -5,6 +5,7 @@
 ## Features
 
 - **Automatically generates unique filenames**: Adds "copy" or increments the copy number to prevent duplicates (e.g., `test copy`, `test copy 2`, `test copy 3`).
+- **Ensures uniqueness**: The algorithm checks if the generated filename already exists in the list of existing files, and if so, increments the copy number until a unique name is found.
 - **Follows Apple's filename duplication algorithm**: The same approach used by macOS to handle duplicate filenames in a directory.
 - **Simple to use**: A straightforward utility for managing file names without manual intervention.
 
